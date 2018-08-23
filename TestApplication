@@ -1,0 +1,20 @@
+
+public class TestApplication {
+
+	
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext context = null;
+		 
+		  try {
+		  context = new AnnotationConfigApplicationContext(AppConfig.class);
+		  MyApplication application = context.getBean(MyApplication.class);
+		  application.performDb();
+		  } catch (Exception e) {
+		  e.printStackTrace();
+		  } finally {
+		  context.close();
+		  }     
+
+	}
+
+}
