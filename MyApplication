@@ -1,0 +1,24 @@
+@Component
+public class MyApplication {
+	
+
+	@Autowired
+	SessionFactory sessionFactory;
+
+	public void performDb()
+	{
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		String sql = "SELECT version()";
+		String result = session.createNativeQuery(sql).uniqueResult().toString();
+		System.out.println("SQL Version : " + result);
+		session.close();
+
+	}
+	
+	public void postDB()
+	{
+		
+	}
+
+}
