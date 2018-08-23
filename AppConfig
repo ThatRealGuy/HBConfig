@@ -1,0 +1,5 @@
+@Component
+@ComponentScan(basePackages ="com.book.mvc")
+public class AppConfig {
+
+}
